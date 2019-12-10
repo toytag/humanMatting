@@ -85,6 +85,7 @@ pip install -r requirements.txt
 Training happens inside `train/train.ipynb`. Feel free to take a look. Keras is quite simple compared to other deep learning framework.
 
 Demo usage
+
 ```
 usage: demo.py [-h] [--gray] path
 
@@ -97,3 +98,5 @@ optional arguments:
   -h, --help  show this help message and exit
   --gray      segmentation in gray mode. RGB by default.
 ```
+
+Use ```python demo.py 0``` to enable camera.
