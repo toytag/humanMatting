@@ -1,6 +1,6 @@
 # humanMatting
 
-Keras implementation of Simplified Unet for semantic human matting
+Keras implementation of Simplified Unet (i.e. LikeUnet) for semantic human matting
 
 ## DataSet
 
@@ -15,11 +15,59 @@ Quoting from the dataset [author's GitHub](https://github.com/aisegmentcn/mattin
 
 #### FCN
 
-FCN stands for **Fully Convolutional Network**. It is originally proposed in the [PAMI FCN](https://arxiv.org/abs/1605.06211) and [CVPR FCN](http://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html) papers, to solve image segmentation problems. This specific model used in `info/FCNberkeley.ipynb` is FCN-8s which can be found in [BerkeleyVision](https://github.com/shelhamer/fcn.berkeleyvision.org) and it is trained on [PASCAL VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/).
+FCN stands for **Fully Convolutional Network**. It is originally proposed in *[Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211)*, to solve image segmentation problems. This specific model FCN-8s used in `info/FCNberkeley.ipynb` can be found in [BerkeleyVision](https://github.com/shelhamer/fcn.berkeleyvision.org) and it is trained on [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/).
+
+![fcn](info/fcn.png)
 
 #### Unet
 
+UNet was first designed especially for medical image segmentation. *[U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)* is accepted at MICCAI 2015.
+
+Unet Structure ("U" shape network)
+![unet](info/unet.png)
+
 ### LikeUnet
+
+With tools as powerful as Unet, the image segmentation is a relatively easy job. Since we care about training speed, model size, and performance, LikeUnet is, well, like Unet, but with less convolution layers kernels.
+
+![likeunet](info/LikeUnet.svg)
+
+Experimental works are done in `info/FCN.ipynb`. You can find different models and ideas in that notebook (more like a draft).
+
+#### Training Info (Smoothed)
+
+Batch loss (Cross entropy loss)
+![batch_loss](info/batch_loss.svg)
+Batch mIoU (mean Intersection over Union)
+![batch_mIoU](info/batch_mIoU.svg)
+Epoch loss (Cross entropy loss) (Train: Orange, Val: Blue)
+![epoch_loss](info/epoch_loss.svg)
+Epoch mIoU (mean Intersection over Union) (Train: Orange, Val: Blue)
+![epoch_mIoU](info/epoch_mIoU.svg)
+
+#### Model size
+    
+Params (weights) is around 7MB
+
+#### Performance
+
+#### Variants
+
+##### Night series
+
+Human Matting in RGB.
+
+- `night.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 3).
+
+- `night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15 and it has validation mean IoU of 97.14%.
+
+##### Dark series
+
+Human Matting in Grayscale.
+
+- `dark.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 1).
+
+- `dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13 and it has validation mean IoU of 97.13%.
 
 ## Dependency
 
@@ -34,6 +82,9 @@ pip install -r requirements.txt
 
 ## Usage
 
+Training happens inside `train/train.ipynb`. Feel free to take a look. Keras is quite simple compared to other deep learning framework.
+
+Demo usage
 ```
 usage: demo.py [-h] [--gray] path
 
