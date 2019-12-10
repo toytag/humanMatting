@@ -1,6 +1,6 @@
 # humanMatting
 
-Keras implementation of Simplified Unet (i.e. LikeUnet) for semantic human matting
+Keras implementation of Simplified Unet (i.e. **LikeUnet**) for semantic human matting
 
 ## DataSet
 
@@ -11,15 +11,13 @@ Quoting from the dataset [author's GitHub](https://github.com/aisegmentcn/mattin
 
 ## Architecture
 
-### BackBone
-
-#### FCN
+### FCN
 
 FCN stands for **Fully Convolutional Network**. It is originally proposed in *[Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211)*, to solve image segmentation problems. This specific model FCN-8s used in `info/FCNberkeley.ipynb` can be found in [BerkeleyVision](https://github.com/shelhamer/fcn.berkeleyvision.org) and it is trained on [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/).
 
 ![fcn](info/fcn.png)
 
-#### Unet
+### Unet
 
 UNet was first designed especially for medical image segmentation. *[U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)* is accepted at MICCAI 2015.
 
@@ -51,23 +49,21 @@ Params (weights) is around 7MB
 
 #### Performance
 
-#### Variants
-
-##### Night series
+#### Night series
 
 Human Matting in RGB.
 
-- `night.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 3).
+- `models/night.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 3).
 
-- `night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15 and it has validation mean IoU of 97.14%.
+- `models/night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15 and it has validation mean IoU of 97.14%.
 
-##### Dark series
+#### Dark series
 
 Human Matting in Grayscale.
 
-- `dark.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 1).
+- `models/dark.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 1).
 
-- `dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13 and it has validation mean IoU of 97.13%.
+- `models/dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13 and it has validation mean IoU of 97.13%.
 
 ## Dependency
 
