@@ -25,15 +25,15 @@ presetSize = [(256, 512), (288, 512), (384, 512),
 
 # load model
 if args.gray:
-    with open('dark.json', 'r') as f:
+    with open('models/dark.json', 'r') as f:
         json_string = f.read()
     model = model_from_json(json_string)
-    model.load_weights('dark-13-0.9713.h5')
+    model.load_weights('models/dark-13-0.9713.h5')
 else:
-    with open('night.json', 'r') as f:
+    with open('models/night.json', 'r') as f:
         json_string = f.read()
     model = model_from_json(json_string)
-    model.load_weights('night-15-0.9714.h5')
+    model.load_weights('models/night-15-0.9714.h5')
 
 # segmentation
 def seg(img, gray=False):
