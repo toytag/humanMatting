@@ -59,7 +59,7 @@ Human Matting in RGB.
 
 - `night.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 3).
 
-- `night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15 and it has validation mean IoU of 97.14%.
+- `night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15/15 and it has validation mean IoU of 97.14%.
 
 ##### Dark series
 
@@ -67,7 +67,7 @@ Human Matting in Grayscale.
 
 - `dark.json`: Human readable architecture. It will accept input shape of (batch_size, 32xH, 32xW, 1).
 
-- `dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13 and it has validation mean IoU of 97.13%.
+- `dark-28-0.9787.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 28/30 and it has validation mean IoU of 97.87%.
 
 ## Dependency
 
