@@ -35,16 +35,20 @@ Experimental works are done in `info/FCN.ipynb`. You can find different models a
 #### Training Info (Smoothed)
 
 Batch loss (Cross entropy loss)
-<img src="info/batch_loss.svg" width="200" height="200" />
+
+<img src="info/batch_loss.svg" width="400" />
 
 Batch mIoU (mean Intersection over Union)
-<img src="info/batch_mIoU.svg" width="200" height="200" />
+
+<img src="info/batch_mIoU.svg" width="400" />
 
 Epoch loss (Cross entropy loss) (Train: Orange, Val: Blue)
-<img src="info/epoch_loss.svg" width="200" height="200" />
+
+<img src="info/epoch_loss.svg" width="400" />
 
 Epoch mIoU (mean Intersection over Union) (Train: Orange, Val: Blue)
-<img src="info/epoch_mIoU.svg" width="200" height="200" />
+
+<img src="info/epoch_mIoU.svg" width="400" />
 
 #### Model size
     
