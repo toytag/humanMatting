@@ -26,21 +26,13 @@ Unet Structure ("U" shape network)
 
 ### LikeUnet
 
-With tools as powerful as Unet, the image segmentation is a relatively easy job. Since we care about training speed, model size, and performance, LikeUnet is, well, like Unet, but with less convolution layers kernels.
+With tools as powerful as Unet, the image segmentation is a relatively easy job. Since we don't want long training time and a huge model, LikeUnet is, well, like Unet, but with less convolution layers and kernels, and slightly deeper. Plus, it looks good.
 
 ![likeunet](info/LikeUnet.svg)
 
 Experimental works are done in `info/FCN.ipynb`. You can find different models and ideas in that notebook (more like a draft).
 
 #### Training Info (Smoothed)
-
-Batch loss (Cross entropy loss)
-
-<img src="info/batch_loss.svg" width="400" />
-
-Batch mIoU (mean Intersection over Union)
-
-<img src="info/batch_mIoU.svg" width="400" />
 
 Epoch loss (Cross entropy loss) (Train: Orange, Val: Blue)
 
@@ -52,7 +44,7 @@ Epoch mIoU (mean Intersection over Union) (Train: Orange, Val: Blue)
 
 #### Model size
     
-Params (weights) is around 7MB
+Params (weights) is around 18MB
 
 #### Performance
 
