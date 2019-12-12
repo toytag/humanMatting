@@ -28,7 +28,7 @@ if args.gray:
     with open('models/dark.json', 'r') as f:
         json_string = f.read()
     model = model_from_json(json_string)
-    model.load_weights('models/dark-28-0.9787.h5')
+    model.load_weights('models/dark-13-0.9713.h5')
 else:
     with open('models/night.json', 'r') as f:
         json_string = f.read()
