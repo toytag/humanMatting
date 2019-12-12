@@ -1215,7 +1215,7 @@
                     "name": "conv2d_10",
                     "trainable": true,
                     "dtype": "float32",
-                    "filters": 4,
+                    "filters": 8,
                     "kernel_size": [
                         3,
                         3

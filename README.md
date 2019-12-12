@@ -32,7 +32,7 @@ With tools as powerful as Unet, the image segmentation is a relatively easy job.
 
 Experimental works are done in `info/FCN.ipynb`. You can find different models and ideas in that notebook (more like a draft).
 
-#### Training Info (Smoothed)
+#### Training curve (Smoothed)
 
 Epoch loss (Cross entropy loss) (Train: Orange, Val: Blue)
 
@@ -54,7 +54,7 @@ Human Matting in RGB.
 
 - `models/night.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 3).
 
-- `models/night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15 and it has validation mean IoU of 97.14%.
+- `models/night-15-0.9714.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 15/15 and it has validation mean IoU of 97.14%.
 
 #### Dark series
 
@@ -62,7 +62,7 @@ Human Matting in Grayscale.
 
 - `models/dark.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 1).
 
-- `models/dark-28-0.9787.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 28/30 and it has validation mean IoU of 97.87%.
+- `models/dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13/15 and it has validation mean IoU of 97.13%.
 
 ## Dependency
 
