@@ -44,7 +44,7 @@ Epoch mIoU (mean Intersection over Union) (Train: Orange, Val: Blue)
 
 #### Model size
     
-Params (weights) is around 18MB
+Params (weights) is around 7 MB
 
 #### Performance
 
