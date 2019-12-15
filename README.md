@@ -89,7 +89,7 @@ Human Matting in Grayscale (with significant smaller model).
 
 - `models/dark-light.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 1).
 
-- `models/dark-light-35-0.9735.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 35/50 and it has validation mean IoU of 97.35%. Models at the end of epoch 46/50 and 50/50 have the same validation mIoU.
+- `models/dark-light-50-0.9735.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 35/50 and it has validation mean IoU of 97.35%. Models at the end of epoch 46/50 and 50/50 have the same validation mIoU.
 
 This is a experiment based on [ACNet: Strengthening the Kernel Skeletons for Powerful CNN via Asymmetric Convolution Blocks](https://arxiv.org/abs/1908.03930). By replacing 3x3 conv with 3x3 + 1x3 + 3x1 convs in the training phase, there might be chances to increase the model performance.
 
