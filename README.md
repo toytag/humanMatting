@@ -83,7 +83,7 @@ Human Matting in Grayscale.
 
 - `models/dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13/15 and it has validation mean IoU of 97.13%.
 
-#### Dark-Light series (NEW)
+#### Dark-Light series (NEW & EXPERIMENTAL)
 
 Human Matting in Grayscale (with significant smaller model).
 
