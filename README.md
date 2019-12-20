@@ -81,7 +81,7 @@ Human Matting in Grayscale.
 
 - `models/dark.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 1).
 
-- `models/dark-13-0.9713.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13/15 and it has validation mean IoU of 97.13%.
+- `models/dark-13-0.9713.h5`: The best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 13/15 and it has validation mean IoU of 97.13%.
 
 #### Dark-Light series (NEW & EXPERIMENTAL)
 
@@ -89,13 +89,21 @@ Human Matting in Grayscale (with significant smaller model).
 
 - `models/dark-light.json`: Human readable architecture. It accepts input shape of (batch_size, 32xH, 32xW, 1).
 
-- `models/dark-light-50-0.9735.h5`: Best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 35/50 and it has validation mean IoU of 97.35%. Models at the end of epoch 46/50 and 50/50 have the same validation mIoU.
+- `models/dark-light-50-0.9735.h5`: One of the best model in terms of validation mean IoU (Intersection over Union). It is the model at the end of epoch 50/50 and it has validation mean IoU of 97.35%. Models at the end of epoch 46/50 and 50/50 have the same validation mIoU.
 
 This is a experiment based on [ACNet: Strengthening the Kernel Skeletons for Powerful CNN via Asymmetric Convolution Blocks](https://arxiv.org/abs/1908.03930). By replacing 3x3 conv with 3x3 + 1x3 + 3x1 convs in the training phase, there might be chances to increase the model performance.
 
 ![acnet](info/acnet.png)
 
-Due to the sigma additivity of convolution operation (conv is a linear operator after all), we could manually combine the weights of 3 different conv layer in to one conv layer after the training phase. The new layer is equivalent to the original 3 parallel layers. Thus, by doing so, performance increases and the runtime is still the same.
+Due to the sigma additivity of convolution operation (conv is a linear operator after all), we could manually combine the weights of 3 different conv layer in to one conv layer after the training phase. The new layer is equivalent to the original 3 parallel layers. Thus, by doing so, performance increases and the runtime is still the same.  
+
+The math comes below:
+
+![acnet_math](info/acnet_math.png)
+
+Note that in this paper, they use batch normalization before combining three convolution layers, while Dark-light does not. (cuz it's easier :)
+
+#### Night-Lite series
 
 ## Dependency
 
