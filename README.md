@@ -136,3 +136,8 @@ optional arguments:
 ```
 
 Use ```python demo.py 0``` to enable camera.
+
+------
+
+The neural network is used when building oneStroke algorithm, which is used when doing a robotics project.
+Checkout the project: https://sites.google.com/berkeley.edu/ee106a-roboart/vision/one-stroke-portrait
